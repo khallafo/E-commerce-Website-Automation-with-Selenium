@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="F:/work/testing/automation/projects/Ecommerce">
+        <classes>
+            <class name="com.tau.steps.CartTest">
+                <methods><include name="Verify_QTY"/>
+                    <include name="VerifyDiscount"/>
+                </methods></class>
+            <class name="com.tau.steps.CompareTest">
+                <methods><include name="Verify_CompareProducts"/>
+                </methods>
+            </class>
+            <class name="com.tau.steps.CreateAccTest">
+                <methods>
+                    <exclude name="TestCreateAccount"/>
+                </methods>
+            </class>
+            <class name="com.tau.steps.MobileTest">
+                <methods>
+                    <include name="VerifySort_MobileList"/>
+                </methods>
+            </class>
+            <class name="com.tau.steps.PurchaseTest">
+                <methods>
+                    <include name="VerifyPurchase_Products"/>
+                </methods>
+            </class>
+            <class name="com.tau.steps.ReorderTest">
+                <methods>
+                    <include name="VerifyReorder_Product"/>
+                </methods>
+            </class>
+            <class name="com.tau.steps.SaveOrderTest">
+                <methods>
+                    <include name="VerifySaveOrder_asPDF"/>
+                </methods>
+            </class>
+            <class name="com.tau.steps.ShareWishlistTest">
+                <methods>
+                    <include name="TestShareWishList"/>
+                </methods>
+            </class>
+            <class name="com.tau.steps.SonyTest">
+                <methods>
+                    <include name="VerifyCost"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
