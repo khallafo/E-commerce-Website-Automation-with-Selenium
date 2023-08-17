@@ -7,19 +7,19 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+
 public class TestBase {
     public static WebDriver driver;
     public WebDriverWait wait;
-    JavascriptExecutor executor;
-    @BeforeClass
+    public JavascriptExecutor executor;
+    @Before()
     public void openUrl()
     {
         WebDriverManager.chromedriver().setup();
@@ -28,12 +28,7 @@ public class TestBase {
         driver.get("http://live.techpanda.org/");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
-    @AfterClass
-    public void closeUrl()
-    {
-        driver.quit();
-    }
-    @AfterMethod
+    @After()
     public void take_screenShot(ITestResult result) throws IOException {
         if(ITestResult.FAILURE == result.getStatus())
         {
@@ -43,5 +38,6 @@ public class TestBase {
             File photo=sc.getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(photo,new File("./screenshots/"+result.getName()+".png"));
         }
+        driver.quit();
     }
 }
