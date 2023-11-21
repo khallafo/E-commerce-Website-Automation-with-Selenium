@@ -1,8 +1,8 @@
 # Project name: Nopcommerce Store
 
   # Used Technologies:
-    java OOP
-    Selenium 
+    -java OOP
+    -Selenium 
     -Maven TestNG 
     -POM 
     -Allure Report
