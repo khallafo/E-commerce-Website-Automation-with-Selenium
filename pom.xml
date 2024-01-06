@@ -105,6 +105,11 @@
                     <parallel>methods</parallel>
                     <useUnlimitedThreads>true</useUnlimitedThreads>
                     <testFailureIgnore>true</testFailureIgnore>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>
+                            https://github.com/khallafo/E-commerce-Website-Automation-with-Selenium/edit/SecondEdition/testng.xml
+                        </suiteXmlFile>
+                    </suiteXmlFiles>     
                 </configuration>
             </plugin>
             <plugin>

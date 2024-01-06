@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="F:/work/testing/automation/projects/Ecommerce">
         <classes>
-            <class name="com.tau.steps.CartTest">
+            <class name="com.tau.steps.CartTestSteps">
                 <methods><include name="Verify_QTY"/>
                     <include name="VerifyDiscount"/>
                 </methods></class>
